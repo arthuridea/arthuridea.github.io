@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-CN">
+<html class="theme-next pisces use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,6 +36,59 @@
 
 
 
+
+
+
+
+<!-- Highlight.js -->
+<link rel="stylesheet" href="/lib/highlight/9.15.6/styles/vs2017.css">
+<style>
+.hljs pre > code {
+    font-family: "Sans Mono", "Consolas", "Courier", monospace;
+}
+.hljs ul {
+  counter-reset: section;
+	list-style: decimal;
+	margin: 0px 0px 0  0 !important;
+	padding: 0px;
+  font-size:.8em;
+}
+.hljs ul li {
+  list-style:none;
+	/*list-style: decimal-leading-zero;
+	border-left: 1px solid #333 !important;*/
+	padding: 5px!important;
+	margin: 0 !important;
+	line-height: 14px;
+	word-break: break-all;
+	word-wrap: break-word;
+}
+.hljs ul li:nth-of-type(even) {
+	color: inherit;
+}
+.hljs ul li::before {
+  counter-increment: section;
+  color: #0ab0b5;  
+  /* color of bullet or square */
+
+  content: counters(section, ".", decimal-leading-zero) " "; 
+  /* Unicode of character to precede the list item */
+
+  font-size: 1em; 
+  /* em or %*/
+ 
+  padding-right: 1.1225em; 
+  /* use em*/
+
+  position: relative;
+  top: 0em; 
+  /* use em or % */ 
+}
+
+</style>
+<style>
+  <%- fa_css() %>
+</style>
 
 
 
@@ -70,7 +123,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Pisces',
     version: '7.1.0',
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
     back2top: true,
@@ -375,14 +428,22 @@
               
               
                 
-              
+                  
                 
               
-              暂无标签
+                
+                  
+                
+              
+                
+                  
+                
+              
+              目前共计 3 个标签
             </div>
             <div class="tag-cloud-tags">
               
-                
+                <a href="/tags/chrome/" style="font-size: 12px; color: #ccc">chrome</a> <a href="/tags/使用技巧/" style="font-size: 12px; color: #ccc">使用技巧</a> <a href="/tags/浏览器/" style="font-size: 12px; color: #ccc">浏览器</a>
               
             </div>
           </div>
@@ -439,7 +500,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -458,7 +519,7 @@
                     
                       
                     
-                    <span class="site-state-item-count">0</span>
+                    <span class="site-state-item-count">1</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -479,7 +540,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">0</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -521,7 +584,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
@@ -541,7 +604,7 @@
 
 
 
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.0</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.1.0</div>
 
 
 
@@ -635,7 +698,6 @@
 
 
 
-
   
   <script src="/js/scrollspy.js?v=7.1.0"></script>
 <script src="/js/post-details.js?v=7.1.0"></script>
@@ -655,6 +717,12 @@
   
 
   
+  
+  <script id="dsq-count-scr" src="https://nekoooo.disqus.com/count.js" async></script>
+
+
+
+
 
 
 
@@ -686,10 +754,74 @@
   
 
   
+<script>
+  $('.hljs,.hightlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+        if (result) $(this).text('复制成功');
+        else $(this).text('复制失败');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('复制');
+      }, 300);
+    }).append(e);
+  })
+</script>
+
 
   
 
   
+
+  
+<!-- Highlight.js -->
+<script src="/lib/highlight/9.15.6/highlight.pack.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+$(document).ready(function(){
+    hljs.initHighlightingOnLoad();
+});
+//代码高亮自定义
+$("code").each(function(){
+  $(this).html("<ul><li>" + $(this).html().replace(/\n/g,"\n</li><li>") +"\n</li></ul>");
+});
+var clipboard = new ClipboardJS('code');
+
+clipboard.on('success', function(e) {
+    console.info('Action:', e.action);
+    console.info('Text:', e.text);
+    console.info('Trigger:', e.trigger);
+
+    e.clearSelection();
+});
+
+clipboard.on('error', function(e) {
+    console.error('Action:', e.action);
+    console.error('Trigger:', e.trigger);
+});
+</script>
 
 </body>
 </html>

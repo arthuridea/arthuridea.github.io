@@ -19,7 +19,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"nekooo.ooo","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"nekooo.ooo","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="keywords" content="arthuridea,喵子">
@@ -102,6 +102,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -131,11 +132,36 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -181,9 +207,8 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-05-06 13:28:00 / 修改时间：20:00:14" itemprop="dateCreated datePublished" datetime="2020-05-06T13:28:00+08:00">2020-05-06</time>
+              <time title="创建时间：2020-05-06 13:28:00" itemprop="dateCreated datePublished" datetime="2020-05-06T13:28:00+08:00">2020-05-06</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -209,14 +234,9 @@
           <blockquote>
 <p>chrome是大家喜闻乐见的浏览器，丰富的应用扩展给日常使用带来很大的便利。<br>但博主很久以来总被“表单自动填充(auto fill)”的提示框困扰，里面出现好多不知道什么时候保存的内容。</p>
 </blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/06/删除Chrome表单自动填充项/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+<p><img src="/usercontent/images/20200506181455733/20200506061900181.png" alt="???" title="这是什么鬼"></p>
+<p>网上的解决方案，大部分都建议关闭“自动填充”，这显然不是令人满意的结果。自动填表它不香吗？那么我们能不能保留自动填充表格的功能的同时，删掉<strong>个别不需要的条目</strong>呢？<br>其实答案很简单，通过 <code>↑</code>  <code>↓</code> 键移动光标到要删除的条目，按 <code>shift</code> + <code>del</code> 即可逐项删除了。</p>
+
       
     </div>
 
@@ -261,13 +281,6 @@
 
               <time title="创建时间：2019-04-28 08:33:01" itemprop="dateCreated datePublished" datetime="2019-04-28T08:33:01+08:00">2019-04-28</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-07 08:35:07" itemprop="dateModified" datetime="2020-05-07T08:35:07+08:00">2020-05-07</time>
-              </span>
 
           
 
@@ -280,7 +293,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>嗯。就酱w</p>
+          <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">'hello world'</span></span><br></pre></td></tr></table></figure>
+<p>嗯。就酱w</p>
 
       
     </div>
@@ -438,6 +452,8 @@
 
 
 
+
+  <script src="/js/local-search.js"></script>
 
 
 

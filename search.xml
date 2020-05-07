@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>删除Chrome表单自动填充项</title>
+    <url>/2020/05/06/%E5%88%A0%E9%99%A4Chrome%E8%A1%A8%E5%8D%95%E8%87%AA%E5%8A%A8%E5%A1%AB%E5%85%85%E9%A1%B9/</url>
+    <content><![CDATA[<blockquote>
+<p>chrome是大家喜闻乐见的浏览器，丰富的应用扩展给日常使用带来很大的便利。<br>但博主很久以来总被“表单自动填充(auto fill)”的提示框困扰，里面出现好多不知道什么时候保存的内容。</p>
+</blockquote>
+<p><img src="/usercontent/images/20200506181455733/20200506061900181.png" alt="???" title="这是什么鬼"></p>
+<p>网上的解决方案，大部分都建议关闭“自动填充”，这显然不是令人满意的结果。自动填表它不香吗？那么我们能不能保留自动填充表格的功能的同时，删掉<strong>个别不需要的条目</strong>呢？<br>其实答案很简单，通过 <code>↑</code>  <code>↓</code> 键移动光标到要删除的条目，按 <code>shift</code> + <code>del</code> 即可逐项删除了。</p>
+]]></content>
+      <categories>
+        <category>使用技巧</category>
+      </categories>
+      <tags>
+        <tag>使用技巧</tag>
+        <tag>浏览器</tag>
+        <tag>chrome</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>安个家</title>
+    <url>/2019/04/28/%E5%AE%89%E4%B8%AA%E5%AE%B6/</url>
+    <content><![CDATA[<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">'hello world'</span></span><br></pre></td></tr></table></figure>
+<p>嗯。就酱w</p>
+]]></content>
+      <tags>
+        <tag>喵窝</tag>
+      </tags>
+  </entry>
+</search>
